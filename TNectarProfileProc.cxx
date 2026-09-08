@@ -122,6 +122,7 @@ Bool_t TNectarProfileProc::BuildEvent(TGo4EventElement *target)
   //TNectarBB8* DSSD = (TNectarBB8*) target;
   TNectarTelescope* Telescope = (TNectarTelescope*) target;
   TNectarRawEvent* rawEvent = (TNectarRawEvent*) GetInputEvent(); 
+  if(!rawEvent->IsValid()) return kTRUE; // ignore invalid 1st step JAM 2026
   //Bool_t fOutput = kFALSE; //not store the output
   Double_t ADC1=0,ADC2=0,ADC3=0,ADC4=0,ADC5=0,ADC6=0;
   for (UInt_t i = 0; i < 1; ++i)

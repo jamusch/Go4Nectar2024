@@ -294,8 +294,8 @@ Bool_t TNectarRawProc::BuildEvent(TGo4EventElement *target)
     //cout << "**** TNectarRawProc: Skip trigger event" << endl;
     //GO4_SKIP_EVENT; - compiler warnings recently...
     //NECTAR_SKIP_EVENT("**** TNectarRawProc: Skip event of trigger type %d\n", triggertype); // works, but floods the terminal
-    throw TGo4UserException(1,nullptr); // this will do it silently JAM24
-    //return kFALSE; // this would let the second step execute!
+    //throw TGo4UserException(1,""); // this will do it silently JAM24
+    return kFALSE; // this would let the second step execute!
   }
 
 // first we fill the TNectarRawEvent with data from MBS source

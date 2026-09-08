@@ -116,7 +116,7 @@ UInt_t TVmmrBoard::GetSlaveNumber()
 {
   UInt_t fSlaveNum=0;
   for(UInt_t i=0 ; i < fSlaves.size() ;i++){
-    if(fSlaves[i]>0){
+    if((long) fSlaves[i]>0){
       fSlaveNum++;
     }
   }

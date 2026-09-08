@@ -174,7 +174,7 @@ void TNectarMonitoringProc:: Filling_Ev_Telescope(TVmmrBoard* theVmmr, TNectarDe
     for (int slid=0; slid<VMMR_CHAINS; ++slid)
     {
         TVmmrSlave* theslave=theVmmr->GetSlave(slid, kFALSE);
-        if(theslave>0)
+        if((long) theslave>0)
         {
             /* MOFIFICATION MARCH 2024 
             Previous if condition :             
@@ -246,7 +246,7 @@ void TNectarMonitoringProc:: Filling_Ev_FFtopbot(TVmmrBoard* theVmmr, TNectarDet
     for (int slid=0; slid<VMMR_CHAINS; ++slid)
     {
         TVmmrSlave* theslave=theVmmr->GetSlave(slid, kFALSE);
-        if(theslave>0)
+        if((long) theslave>0)
         {
             /* MOFIFICATION MARCH 2024 
             Previous if condition :             
@@ -353,7 +353,7 @@ void TNectarMonitoringProc:: Filling_Ev_FFside(TVmmrBoard* theVmmr, TNectarDetec
     {
         TVmmrSlave* theslave=theVmmr->GetSlave(slid, kFALSE);
         
-        if(theslave>0)
+        if((long) theslave>0)
         {
             UInt_t maxvmmrmessages = theslave->NumAdcMessages();
             
@@ -417,7 +417,7 @@ void TNectarMonitoringProc:: Filling_Ev_BB29(TVmmrBoard* theVmmr, TNectarDetecto
   for (int slid=0; slid<VMMR_CHAINS; ++slid)
     {
       TVmmrSlave* theslave=theVmmr->GetSlave(slid, kFALSE);
-      if(theslave>0){
+      if((long) theslave>0){
 	UInt_t maxvmmrmessages = theslave->NumAdcMessages();
 	if(slid==5){
 	  int Vmmr_strip_C[128] = {0,0,40,14,36,16,30,10,34,12,38,6,44,8,42,2,48,4,46,20,52,18,50,24,56,22,54,28,60,26,58,32,57,31,59,25,53,27,55,21,49,23,51,17,45,19,47,3,41,1,43,7,37,5,33,11,29,9,35,15,39,13,0,0,62,0,66,64,112,110,116,114,120,118,68,122,70,72,74,76,78,80,82,84,88,86,92,90,96,94,100,98,104,102,108,106,107,105,103,101,99,97,95,93,91,89,87,85,81,83,77,79,73,75,69,71,67,121,119,117,115,113,111,109,65,63,61};    //Convension Array VMMR channel -> Strips number 
